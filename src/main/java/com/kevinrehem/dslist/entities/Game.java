@@ -8,31 +8,35 @@ import java.util.Objects;
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String title;
+    private Long id;//1
+
+    @Column
+    private String title;//2
+
+    @Column
+    private Double score;//3
+
     @Column(name = "game_year")
-    private Integer year;
-    private String genre;
-    private String platform;
-    private String imgUrl;
-    private String shortDescription;
-    private String longDescription;
-    private Double score;
+    private Integer year;//4
+
+    @Column
+    private String genre;//5
+
+    @Column
+    private String platforms;//6
+
+    @Column
+    private String imgUrl;//7
+
+    @Column(columnDefinition = "TEXT")
+    private String shortDescription;//8
+
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;//9
 
     public Game(){}
 
-    public Game(Long id, String title, String genre, String platform, String imgUrl,
-                String shortDescription, String longDescription, Integer year, Double score) {
-        this.id = id;
-        this.title = title;
-        this.genre = genre;
-        this.platform = platform;
-        this.imgUrl = imgUrl;
-        this.shortDescription = shortDescription;
-        this.longDescription = longDescription;
-        this.year = year;
-        this.score = score;
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -70,12 +74,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlatform() {
-        return platform;
+    public String getPlatforms() {
+        return platforms;
     }
 
-    public void setPlatform(String platform) {
-        this.platform = platform;
+    public void setPlatforms(String platforms) {
+        this.platforms = platforms;
     }
 
     public String getImgUrl() {
