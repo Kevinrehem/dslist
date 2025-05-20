@@ -3,14 +3,14 @@ package com.kevinrehem.dslist.entities;
 import jakarta.persistence.*;
 
 import java.util.Objects;
-@Entity
-@Table(name = "tb_game")
+@Entity //classifica classe como entidade a ser representada no banco
+@Table(name = "tb_game")//da nome à tabela que será criada para representar entidade no banco
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;//1
 
-    @Column
+    @Column//usei essas anotations para contornar problema de ordem das colunas
     private String title;//2
 
     @Column
@@ -28,7 +28,7 @@ public class Game {
     @Column
     private String imgUrl;//7
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT") //força um tipo de dado no banco
     private String shortDescription;//8
 
     @Column(columnDefinition = "TEXT")
