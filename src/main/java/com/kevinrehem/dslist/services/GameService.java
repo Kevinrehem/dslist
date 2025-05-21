@@ -16,11 +16,6 @@ public class GameService {
     private GameRepository gameRepository;
 
     public List<GameMinDTO> findAll(){
-        List<Game> result = gameRepository.findAll();
-        List<GameMinDTO> min_games = new ArrayList<>();
-        for(Game it:result){
-            min_games.add(new GameMinDTO(it));
-        }
-        return min_games;
+        return gameRepository.findAll().stream().map(x-> new GameMinDTO(x)).toList();
     }
 }
