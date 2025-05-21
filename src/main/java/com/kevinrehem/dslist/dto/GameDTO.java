@@ -99,15 +99,5 @@ public class GameDTO {
         this.longDescription = longDescription;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof GameDTO gameDTO)) return false;
-        return Objects.equals(getId(), gameDTO.getId());
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
-    }
 }
